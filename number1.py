@@ -1,6 +1,7 @@
 import pygame
 import time
 from paddle import Paddle
+from fish import Fish
 from random import randint
 
 pygame.init()
@@ -22,7 +23,7 @@ paddle = Paddle(WHITE, 30, 10)
 paddle.rect.x = 325
 paddle.rect.y = 470
 
-fish = Paddle(BLUE, 20, 10)
+fish = Fish(BLUE)
 fish.rect.x = 355
 fish.rect.y = 470
 
@@ -52,14 +53,6 @@ while emJogo:
         if paddle.rect.x > 670:
             paddle.rect.x = 670
     
-    # area for random fish movement implementation
-    randomnumba = randint(0,365)
-    numba = randomnumba/5
-    for x in range(int(numba)):
-        if x > 5:
-            fish.moveLeft(5)
-        if x < 5:
-            fish.moveRight(5)
     # https://realpython.com/python-sleep/
     # random.randint(0,680)
     # time.sleep()
